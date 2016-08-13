@@ -458,7 +458,7 @@ class DrunkFireMode(GameMode):
     def teardown(self):
         events.remove_listener("chk_win", self.all_dead_chk_win)
 
-@game_mode("noreveal", minp = 4, maxp = 21, likelihood = 2)
+@game_mode("noreveal", minp = 4, maxp = 21, likelihood = 0)
 class NoRevealMode(GameMode):
     """Roles are not revealed when players die."""
     def __init__(self, arg=""):
@@ -1130,8 +1130,8 @@ class SleepyMode(GameMode):
                     pm(cli, cultist, messages["sleepy_demoniac_turn"])
                 # NOTE: chk_win is called by del_player, don't need to call it here even though this has a chance of ending game
 
-@game_mode("maelstrom", minp = 8, maxp = 24, likelihood = 0)
-class MaelstromMode(GameMode):
+@game_mode("saltstorm", minp = 8, maxp = 24, likelihood = 0)
+class SaltstormMode(GameMode):
     """Some people just want to watch the world burn."""
     def __init__(self, arg=""):
         self.ROLE_REVEAL = "on"
